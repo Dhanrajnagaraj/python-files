@@ -1,0 +1,48 @@
+import boto3
+bucketexsists=[]
+s3call=boto3.client('s3',aws_access_key_id='AKIA2UC3ARU6TIUPQJ67',aws_secret_access_key='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',region_name='ap-south-1')
+#print (dir(s3call))
+bucketlist=s3call.list_buckets()
+bucketdetails=bucketlist['Buckets']
+count_of_bucke=len(bucketlist['Buckets'])
+for buc_ran in range(0,count_of_bucke,1):
+    #print (bucketdetails[buc_ran]['Name'])
+    bucketexsists.append(bucketdetails[buc_ran]['Name'])
+
+print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
+usr_inp_bucke=input("Enter the Bucket to be checked\n")
+if (usr_inp_bucke in bucketexsists):
+    print ("Bucket {0} exsists".format(usr_inp_bucke))
+    s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
+    print (s3objectall)
+    #print (s3objectall.keys())
+    if 'Contents' in s3objectall:
+        s3objectlist=s3objectall['Contents']
+        count_of_object=len(s3objectlist)
+        for obj_ran in range(0,count_of_object,1):
+            name_of_objec=s3objectlist[obj_ran]['Key']
+            size_of_object=s3objectlist[obj_ran]['Size']
+            print ("Below are details of Object {0} in Bucket {1}\nname={0}\nsize={2}\n================".format(name_of_objec,usr_inp_bucke,size_of_object))
+    else:
+        print ("No objecs available in bucket {0} and its empty bucket".format(usr_inp_bucke))
+else:
+    print ("Bucket {0} doesnt exsists".format(usr_inp_bucke))
+    usr_conf=input("Enter 'yes' to create bucket")
+    if (usr_conf == "yes"):
+        bucket_exsiting_post_crea=[]
+        print ("User confirmed to create Bucket {0}".format(usr_inp_bucke))
+        location_buck=input("Enter the location where bucket need to be created")
+        cre_buk=s3call.create_bucket(Bucket=usr_inp_bucke,CreateBucketConfiguration={'LocationConstraint':location_buck})
+        print (cre_buk)
+        list_bu_pos_crea=s3call.list_buckets()
+        bucket_listing=list_bu_pos_crea['Buckets']
+        for jk in bucket_listing:
+            bucket_exsiting_post_crea.append(jk['Name'])
+        if (usr_inp_bucke in bucket_exsiting_post_crea):
+            print ("Bucket {0} successfully created post user confirmation".format(usr_inp_bucke))
+        else:
+            print ("Bucket {0} not created due to permission issue or parameter".format(usr_inp_bucke))
+
+    else:
+        print ("User Not confirmed to create Bucket {0}".format(usr_inp_bucke))
+
