@@ -6,9 +6,9 @@ s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_acc
 
 
 import boto3
-#print (dir(boto3))
+print (dir(boto3))
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 
 list_buckets=s3call.list_buckets()
 print (list_buckets)
@@ -17,17 +17,17 @@ print (list_buckets)
 
 
 import boto3
-#print (dir(boto3))
+print (dir(boto3))
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 bucket_exsists=[]
 list_buckets=s3call.list_buckets()
-#print (list_buckets)
+print (list_buckets)
 bucketlist=list_buckets['Buckets']
-#print (bucketlist)
+print (bucketlist)
 count_of_buck=len(bucketlist)
 for i in range(0,count_of_buck,1):
-    #print (bucketlist[i]['Name'])
+    print (bucketlist[i]['Name'])
     bucket_exsists.append(bucketlist[i]['Name'])
 print ("Below are Buckets Available in Account\n{0}".format("\n".join(bucket_exsists)))
 
@@ -40,19 +40,19 @@ import boto3
 import re
 alphmatch=re.compile(r'^[a-z]+$')
 numbermatch=re.compile(r'[0-9]+$')
-#print (dir(boto3))
+print (dir(boto3))
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 bucket_exsists=[]
 list_buckets=s3call.list_buckets()
-#print (list_buckets)
+print (list_buckets)
 bucketlist=list_buckets['Buckets']
-#print (bucketlist)
+print (bucketlist)
 count_of_buck=len(bucketlist)
 for i in range(0,count_of_buck,1):
     #print (bucketlist[i]['Name'])
     bucket_exsists.append(bucketlist[i]['Name'])
-#print ("Below are Buckets Available in Account\n{0}".format("\n".join(bucket_exsists)))
+print ("Below are Buckets Available in Account\n{0}".format("\n".join(bucket_exsists)))
 
 if (count_of_buck < 3):
     print ("Count of buckets available is {0}".format(count_of_buck))
@@ -78,19 +78,19 @@ alphmatch=re.compile(r'^[a-z]+$')
 numbermatch=re.compile(r'[0-9]+$')
 alphamatch_1=re.compile(r'[a-z]')
 numbermatch_1=re.compile(r'[0-9]')
-#print (dir(boto3))
+print (dir(boto3))
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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')
-#print (dir(s3call))
+print (dir(s3call))
 bucket_exsists=[]
 list_buckets=s3call.list_buckets()
-#print (list_buckets)
+print (list_buckets)
 bucketlist=list_buckets['Buckets']
-#print (bucketlist)
+print (bucketlist)
 count_of_buck=len(bucketlist)
 for i in range(0,count_of_buck,1):
-    #print (bucketlist[i]['Name'])
+    print (bucketlist[i]['Name'])
     bucket_exsists.append(bucketlist[i]['Name'])
-#print ("Below are Buckets Available in Account\n{0}".format("\n".join(bucket_exsists)))
+print ("Below are Buckets Available in Account\n{0}".format("\n".join(bucket_exsists)))
 
 if (count_of_buck < 3):
     print ("Count of buckets available is {0}".format(count_of_buck))
@@ -115,12 +115,12 @@ else:
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
 for buc_ran in range(0,count_of_bucke,1):
-    #print (bucketdetails[buc_ran]['Name'])
+    print (bucketdetails[buc_ran]['Name'])
     bucketexsists.append(bucketdetails[buc_ran]['Name'])
 
 print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
@@ -136,12 +136,12 @@ else:
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
 for buc_ran in range(0,count_of_bucke,1):
-    #print (bucketdetails[buc_ran]['Name'])
+    print (bucketdetails[buc_ran]['Name'])
     bucketexsists.append(bucketdetails[buc_ran]['Name'])
 
 print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
@@ -149,7 +149,7 @@ usr_inp_bucke=input("Enter the Bucket to be checked\n")
 if (usr_inp_bucke in bucketexsists):
     print ("Bucket {0} exsists".format(usr_inp_bucke))
     s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
-    #print (s3objectall.keys())
+    print (s3objectall.keys())
     s3objectlist=s3objectall['Contents']
     count_of_object=len(s3objectlist)
     for obj_ran in range(0,count_of_object,1):
@@ -166,12 +166,12 @@ else:
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
 for buc_ran in range(0,count_of_bucke,1):
-    #print (bucketdetails[buc_ran]['Name'])
+    print (bucketdetails[buc_ran]['Name'])
     bucketexsists.append(bucketdetails[buc_ran]['Name'])
 
 print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
@@ -180,7 +180,7 @@ if (usr_inp_bucke in bucketexsists):
     print ("Bucket {0} exsists".format(usr_inp_bucke))
     s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
     print (s3objectall)
-    #print (s3objectall.keys())
+    print (s3objectall.keys())
     if "Contents" in s3objectall:
         s3objectlist=s3objectall['Contents']
         count_of_object=len(s3objectlist)
@@ -199,12 +199,12 @@ else:
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
 for buc_ran in range(0,count_of_bucke,1):
-    #print (bucketdetails[buc_ran]['Name'])
+    print (bucketdetails[buc_ran]['Name'])
     bucketexsists.append(bucketdetails[buc_ran]['Name'])
 
 print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
@@ -213,7 +213,7 @@ if (usr_inp_bucke in bucketexsists):
     print ("Bucket {0} exsists".format(usr_inp_bucke))
     s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
     print (s3objectall)
-    #print (s3objectall.keys())
+    print (s3objectall.keys())
     if 'Contents' in s3objectall:
         s3objectlist=s3objectall['Contents']
         count_of_object=len(s3objectlist)
@@ -252,12 +252,12 @@ else:
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
 for buc_ran in range(0,count_of_bucke,1):
-    #print (bucketdetails[buc_ran]['Name'])
+    print (bucketdetails[buc_ran]['Name'])
     bucketexsists.append(bucketdetails[buc_ran]['Name'])
 
 print ("Below are Buckets Available in account\n{0}".format('\n'.join(bucketexsists)))
@@ -266,7 +266,7 @@ if (usr_inp_bucke in bucketexsists):
     print ("Bucket {0} exsists".format(usr_inp_bucke))
     s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
     print (s3objectall)
-    #print (s3objectall.keys())
+    print (s3objectall.keys())
     if 'Contents' in s3objectall:
         s3objectlist=s3objectall['Contents']
         count_of_object=len(s3objectlist)
@@ -324,7 +324,7 @@ if (usrop == "1"):
 import boto3
 bucketexsists=[]
 s3call=boto3.client('s3',aws_access_key_id='AKIASOKOYD6SHCCXMBAG',aws_secret_access_key='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',region_name='ap-south-1')
-#print (dir(s3call))
+print (dir(s3call))
 bucketlist=s3call.list_buckets()
 bucketdetails=bucketlist['Buckets']
 count_of_bucke=len(bucketlist['Buckets'])
@@ -338,7 +338,7 @@ if (usr_inp_bucke in bucketexsists):
     print ("Bucket {0} exsists".format(usr_inp_bucke))
     s3objectall=s3call.list_objects(Bucket=usr_inp_bucke)
     print (s3objectall)
-    #print (s3objectall.keys())
+    print (s3objectall.keys())
     if 'Contents' in s3objectall:
         s3objectlist=s3objectall['Contents']
         count_of_object=len(s3objectlist)
@@ -417,7 +417,7 @@ for j in range(0,len(ec2region),1):
 #!/usr/bin/python
 import boto3
 ec2call=boto3.client('ec2')
-#print (dir(ec2call))
+print (dir(ec2call))
 list_re=ec2call.describe_regions()
 region_out=list_re['Regions']
 region_list=[]
@@ -443,7 +443,7 @@ ec2details_fetching=ec2call.describe_instances()
 instancedetails=ec2details_fetching['Reservations']
 print (instancedetails)
 for i in range(0,len(instancedetails),1):
-#    print (instancedetails[0]['Instances'][0])
+    print (instancedetails[0]['Instances'][0])
 
     dnsname=instancedetails[i]['Instances'][0]['PublicDnsName']
     state_of_instance=instancedetails[i]['Instances'][0]['State']['Name']
@@ -467,7 +467,7 @@ for i in range(0,len(instancedetails),1):
 #!/usr/bin/python
 import boto3
 ec2call=boto3.client('ec2')
-#print (dir(ec2call))
+print (dir(ec2call))
 list_re=ec2call.describe_regions()
 region_out=list_re['Regions']
 region_list=[]
@@ -494,7 +494,7 @@ instancedetails=ec2details_fetching['Reservations']
 print (instancedetails)
 instanceid_details=[]
 for i in range(0,len(instancedetails),1):
-    #print (instancedetails[0]['Instances'][0])
+    print (instancedetails[0]['Instances'][0])
 
     dnsname=instancedetails[i]['Instances'][0]['PublicDnsName']
     state_of_instance=instancedetails[i]['Instances'][0]['State']['Name']
@@ -525,7 +525,7 @@ print ("Below are Instance id in Availability zone {0}\n{1}".format(ava_user_in,
 #!/usr/bin/python
 import boto3
 ec2call=boto3.client('ec2')
-#print (dir(ec2call))
+print (dir(ec2call))
 list_re=ec2call.describe_regions()
 region_out=list_re['Regions']
 region_list=[]
@@ -552,7 +552,7 @@ instancedetails=ec2details_fetching['Reservations']
 print (instancedetails)
 instanceid_details=[]
 for i in range(0,len(instancedetails),1):
-    #print (instancedetails[0]['Instances'][0])
+    print (instancedetails[0]['Instances'][0])
 
     dnsname=instancedetails[i]['Instances'][0]['PublicDnsName']
     state_of_instance=instancedetails[i]['Instances'][0]['State']['Name']
@@ -595,7 +595,7 @@ elif (usrinput == "3"):
 #!/usr/bin/python
 import boto3
 ec2call=boto3.client('ec2')
-#print (dir(ec2call))
+print (dir(ec2call))
 list_re=ec2call.describe_regions()
 region_out=list_re['Regions']
 region_list=[]
@@ -622,7 +622,7 @@ instancedetails=ec2details_fetching['Reservations']
 print (instancedetails)
 instanceid_details=[]
 for i in range(0,len(instancedetails),1):
-    #print (instancedetails[0]['Instances'][0])
+    print (instancedetails[0]['Instances'][0])
 
     dnsname=instancedetails[i]['Instances'][0]['PublicDnsName']
     state_of_instance=instancedetails[i]['Instances'][0]['State']['Name']
@@ -693,7 +693,7 @@ ec2call=boto3.client('ec2')
 sgcall=ec2call.describe_security_groups()
 sgcall_out=sgcall['SecurityGroups']
 for sg_ran in range(0,len(sgcall_out),1):
-#    print (sgcall_out[sg_ran])
+    print (sgcall_out[sg_ran])
     print (sgcall_out[sg_ran].keys())
     print (sgcall_out[sg_ran]['GroupName'])
     print (sgcall_out[sg_ran]['VpcId'])
@@ -714,21 +714,21 @@ import boto3
 finaldetails=[]
 ec2call=boto3.client('ec2')
 ebs_descr=ec2call.describe_volumes()
-#print (ebs_descr)
+print (ebs_descr)
 ebsvolumedetails=ebs_descr['Volumes']
 #print (len(ebsvolumedetails))
 for ebs_ran in range(0,len(ebsvolumedetails),1):
     details={}
-#    print (ebsvolumedetails[ebs_ran].keys())
+    print (ebsvolumedetails[ebs_ran].keys())
     avaz=ebsvolumedetails[ebs_ran]['AvailabilityZone']
     volid=ebsvolumedetails[ebs_ran]['VolumeId']
     volst=ebsvolumedetails[ebs_ran]['State']
     details['availzone']=avaz
     details['volumeid']=volid
     details['state']=volst
-#    print (details)
+    print (details)
     finaldetails.append(details)
-#    print ("======================================================")
+    print ("======================================================")
 
 print (finaldetails)
 
@@ -744,7 +744,7 @@ ec2instance=ec2call.describe_instances()
 details_instance=ec2instance['Reservations']
 instance_id=[]
 for ece_ran in range(0,len(details_instance),1):
-#    print (details_instance[ece_ran]['Instances'][0]['InstanceId'])
+    print (details_instance[ece_ran]['Instances'][0]['InstanceId'])
     avaz_op=details_instance[ece_ran]['Instances'][0]['Placement']['AvailabilityZone']
     if (avaz_op == usr_avaz):
         instance_id.append(details_instance[ece_ran]['Instances'][0]['InstanceId'])
@@ -790,8 +790,8 @@ def collectingkeypairs():
 
 
 collectingkeypairs()    
-#print( dir(ec2_call))
-#print( dir(ec2_call.run_instances()))
+print( dir(ec2_call))
+print( dir(ec2_call.run_instances()))
 
 aws_key_pair=raw_input("Enter the key pair from above list\n")
 print (aws_key_pair)
@@ -804,7 +804,7 @@ def collecting_security_groups():
     for sec in range(0,len(security_group_collection['SecurityGroups']),1):
         if security_group_collection['SecurityGroups'][sec]['GroupName'] not in security_group_list:
             security_group_list.append(security_group_collection['SecurityGroups'][sec]['GroupName'])
-#    print( "\nBelow are the Security group available in the region  {0}\n\n{1}".format(regionname_input.strip(),"\n".join(security_group_list))        )
+    print( "\nBelow are the Security group available in the region  {0}\n\n{1}".format(regionname_input.strip(),"\n".join(security_group_list))        )
 
 
 collecting_security_groups()   
@@ -821,7 +821,7 @@ def collecting_subnet_details():
     for subran in range(0,len(subnet_collections['Subnets']),1):
         if  subnet_collections['Subnets'][subran]['SubnetId'] not in subnet_list:
             subnet_list.append(subnet_collections['Subnets'][subran]['SubnetId'])
-#    print( "\n Below are the Subnets available in the region {0}\n\n{1}".format(regionname_input.strip(),"\n".join(subnet_list)))
+    print( "\n Below are the Subnets available in the region {0}\n\n{1}".format(regionname_input.strip(),"\n".join(subnet_list)))
 
 
 
@@ -854,13 +854,12 @@ def selected_subnet_details():
 
 selected_subnet_details()    
 
-#print( "Below are the Security Group details available in the region {0}\n\n{1}".format(regionselect.strip(),"\n".join(security_group_list)))
-
-#selectsecuritygrp=raw_input("Enter the Security group from above list which will be used to create EC2 instance\n\n")
+print( "Below are the Security Group details available in the region {0}\n\n{1}".format(regionselect.strip(),"\n".join(security_group_list)))
+selectsecuritygrp=raw_input("Enter the Security group from above list which will be used to create EC2 instance\n\n")
 
 def security_group_collection_collect():
     security_group_under_vpcids=[]
-#    print( security_group_collection['SecurityGroups'])
+    print( security_group_collection['SecurityGroups'])
     for secran in range(0,len(security_group_collection['SecurityGroups']),1):
         if (security_group_collection['SecurityGroups'][secran]['VpcId'] == str(vpcid_selected)):
             if security_group_collection['SecurityGroups'][secran]['GroupName'] not in security_group_under_vpcids:
@@ -883,7 +882,7 @@ def Collecting_details_selected_security_group():
         if (str(security_group_collection['SecurityGroups'][selecsg_range]['GroupName']) == str(selectsecuritygrp)):
             print( security_group_collection['SecurityGroups'][selecsg_range]['GroupName'])
             print( "\n\nBelow are the Details of security group {0}\n\n".format(selectsecuritygrp.strip()))
-            #print( security_group_collection['SecurityGroups'][selecsg_range])
+            print( security_group_collection['SecurityGroups'][selecsg_range])
             print( "Security_Group_id: {0}".format(security_group_collection['SecurityGroups'][selecsg_range]['GroupId']))
             selectsecuritygrp="{0}".format(security_group_collection['SecurityGroups'][selecsg_range]['GroupId'])
             print( "Vpc_id: {0}".format(security_group_collection['SecurityGroups'][selecsg_range]['VpcId']))
@@ -895,42 +894,33 @@ def Collecting_details_selected_security_group():
                     Outbound_port.append(security_group_collection['SecurityGroups'][selecsg_range]['IpPermissions'][oubound]['FromPort'])
             print( "Inbound_Port details: {0}".format(Inbound_port))
             print( "Outbound_Port_details: {0}".format(Outbound_port))
-
-      
-
-
-
 Collecting_details_selected_security_group()            
-
-
-
-
 instance_type=raw_input("Enter the Instance type\n")
 ami_id=raw_input("Enter the ami id\n")
 
 
-#def creating_instances():
-#    instance_creation=ec2_call.run_instances(ImageId="ami-0c6615d1e95c98aca",InstanceType="{0}".format(instance_type.strip()),KeyName="{0}".format('nov15'),MaxCount=int(count_instances_required),MinCount=int(1),SecurityGroupIds=[selectsecuritygrp],SubnetId="{0}".format(subnetselect.strip()),NetworkInterfaces=[
-#    {
-#        'DeviceIndex': 0,
-#        'SubnetId' : subnetselect.strip(),
-#        'Groups': [selectsecuritygrp],
-#        ]
-#        'AssociatePublicIpAddress': True            
-#    })
-#    print( instance_creation)
+def creating_instances():
+    instance_creation=ec2_call.run_instances(ImageId="ami-0c6615d1e95c98aca",InstanceType="{0}".format(instance_type.strip()),KeyName="{0}".format('nov15'),MaxCount=int(count_instances_required),MinCount=int(1),SecurityGroupIds=[selectsecuritygrp],SubnetId="{0}".format(subnetselect.strip()),NetworkInterfaces=[
+     {   
+        'DeviceIndex': 0,
+        'SubnetId' : subnetselect.strip(),
+        'Groups': [selectsecuritygrp],
+        ]
+        'AssociatePublicIpAddress': True            
+    })
+    print( instance_creation)
 
 
 #creating_instances()
 
-#kj=ec2_call.run_instances(InstanceType=str(instance_type.strip()),
-#                         MaxCount=int(count_instances_required),
-#                         MinCount=int(count_instances_required),
-#                         ImageId="ami-0c6615d1e95c98aca")
+ kj=ec2_call.run_instances(InstanceType=str(instance_type.strip()),
+                         MaxCount=int(count_instances_required),
+                         MinCount=int(count_instances_required),
+                         ImageId="ami-0c6615d1e95c98aca")
 
-#print( kj)
+print( kj)
 
-ec2_call_create=boto3.resource('ec2',region_name='{0}'.format(regionname_input))
+ec2_call_create=boto3.resource('ec2',region_name='{0}'.format(regionname_input)) 
 
 def creating_instances():
     global instance_creation
@@ -942,8 +932,8 @@ def creating_instances():
         
         'AssociatePublicIpAddress': True
     }])
-#    print( dir(instance_creation))
-#    instance_creation.reload()
+    print( dir(instance_creation))
+    instance_creation.reload()
 
     for instanceid in instance_creation:
         print( instanceid.id)
